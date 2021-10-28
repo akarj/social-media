@@ -1,0 +1,20 @@
+{
+  "name": "social-media",
+  "version": "1.0.0",
+  "description": "React Based Social Media Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "keywords": [
+    "React",
+    "Js",
+    "MongoDB",
+    "Express",
+    "Js",
+    "Node",
+    "Js"
+  ],
+  "author": "Anuj Kumar",
+  "license": "ISC"
+}
