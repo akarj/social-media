@@ -9,6 +9,7 @@ const MONGO_URL = process.env.REACT_APP_MONGO_URL;
 const path = require("path");
 const usersRoute = require("./Routes/UsersRoute");
 const authRoute = require("./Routes/AuthRoute");
+const postRoute = require("./Routes/PostRoute");
 
 // [Middleware]
 app.use(express.json());
@@ -43,3 +44,4 @@ app.get("/", (req, res) => {
 });
 app.use("/api/users", usersRoute);
 app.use("/api/auth", authRoute);
+app.use("/api/posts", postRoute);
