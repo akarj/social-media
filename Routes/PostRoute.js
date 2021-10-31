@@ -95,9 +95,7 @@ router.get("/timeline/all", async (req, res) => {
         return Post.find({ userId: friendId });
       })
     );
-    res.json(userPosts.concat(...friendPosts));
-    postArray = await Post.findById(req.params.id);
-    return res.status(200).json(postArray);
+    return res.status(200).json(userPosts.concat(...friendPosts));
   } catch (err) {
     console.log({ message: "error in getting the post", err });
     return res.status(500).json({ message: "error in getting the post" });
