@@ -1,9 +1,12 @@
+import Share from "../share/Share";
 import "./Feed.scss";
 
 export default function Feed() {
   return (
-    <div className="feedContainer">
-      <span>Feed</span>
+    <div className="feed">
+      <div className="feedContainer">
+        <Share />
+      </div>
     </div>
   );
 }
