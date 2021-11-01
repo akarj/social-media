@@ -3,7 +3,11 @@ import { HiSearch } from "react-icons/hi";
 import { BsPersonFill } from "react-icons/bs";
 import { SiMessenger } from "react-icons/si";
 import { IoMdNotifications } from "react-icons/io";
-
+import Avatar from "@mui/material/Avatar";
+// import { Badge, IconButton, Menu, MenuItem } from "@mui/material";
+// import Person from "@mui/icons-material/Person";
+// import NotificationsIcon from "@mui/icons-material/Notifications";
+// import MessageIcon from "@mui/icons-material/Message";
 export default function Topbar() {
   return (
     <div className="topbarContainer">
@@ -26,6 +30,42 @@ export default function Topbar() {
           <span className="topbarLink">Timeline</span>
         </div>
         <div className="topbarIcons">
+          {/* <Menu open={true}>
+            <MenuItem>
+              <IconButton
+                size="large"
+                aria-label="show person icon"
+                color="inherit"
+              >
+                <Badge badgeContent={1} color="error">
+                  <Person />
+                </Badge>
+              </IconButton>
+            </MenuItem>
+            <MenuItem>
+              <IconButton
+                size="large"
+                aria-label="show person icon"
+                color="inherit"
+              >
+                <Badge badgeContent={1} color="error">
+                  <MessageIcon />
+                </Badge>
+              </IconButton>
+            </MenuItem>
+            <MenuItem>
+              <IconButton
+                size="large"
+                aria-label="show person icon"
+                color="inherit"
+              >
+                <Badge badgeContent={1} color="error">
+                  <NotificationsIcon />
+                </Badge>
+              </IconButton>
+            </MenuItem>
+          </Menu> */}
+
           <div className="topbarIconItem">
             <BsPersonFill className="icons" id="person" />
             <i className="topbarIconBadge">1</i>
@@ -35,13 +75,20 @@ export default function Topbar() {
             <i className="topbarIconBadge">1</i>
           </div>
           <div className="topbarIconItem">
-            <IoMdNotifications className="icons" id="notifications" />
+            <IoMdNotifications
+              className="icons notifications"
+              id="notifications"
+            />
             <i className="topbarIconBadge">1</i>
           </div>
         </div>
-        <img
+        {/* <img
           src="https://source.unsplash.com/32x32/weekly?person"
           alt="profile"
+        /> */}
+        <Avatar
+          alt="Random Profile"
+          src="https://source.unsplash.com/32x32/weekly?person"
         />
       </div>
     </div>

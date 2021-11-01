@@ -65,6 +65,12 @@ div.topbarContainer {
         margin-right: 1.2em;
         cursor: pointer;
         position: relative;
+        .icons {
+          font-size: 25px;
+          // &#notifications {
+          //   font-size: 27px;
+          // }
+        }
 
         i.topbarIconBadge {
           width: 15px;
@@ -73,8 +79,8 @@ div.topbarContainer {
           border-radius: 50%;
           color: white;
           position: absolute;
-          top: -5px;
-          right: -5px;
+          top: -6px;
+          right: -6px;
           display: flex;
           align-items: center;
           justify-content: center;
