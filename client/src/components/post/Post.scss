@@ -1,0 +1,82 @@
+div.post {
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.23%);
+  width: 100%;
+  border-radius: 10px;
+  margin: 30px 0px;
+  div.postWrapper {
+    padding: 10px;
+    div.postTop {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      div.postTopLeft {
+        display: flex;
+        align-items: center;
+
+        img.postProfileImg {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        span.postUsername {
+          font-size: 1.1rem;
+          font-weight: 500;
+          margin: 0px 10px;
+        }
+        span.postDate {
+          font-size: 0.8rem;
+        }
+      }
+      // div.postTopRight {
+      //   .verticalHam {
+      //     //
+      //   }
+      // }
+    }
+    div.postCenter {
+      margin: 20px 0;
+
+      span.postText {
+        //
+      }
+      img.postImg {
+        margin-top: 20px;
+        width: 100%;
+        max-height: 500px;
+        object-fit: contain;
+      }
+    }
+    div.postBottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      div.postBottomLeft {
+        display: flex;
+        align-items: center;
+        .likeIcon {
+          font-size: 24px !important;
+          height: 24px;
+          width: 24px;
+          // margin-right: 5px;
+          cursor: pointer;
+        }
+        .postLikeCounter {
+          margin-left: 5px;
+          transform: translateY(22%);
+          font-size: 15px;
+        }
+      }
+      div.postBottomRight {
+        span.postCommentText {
+          cursor: pointer;
+          font-size: 15px;
+          &:hover {
+            border-bottom: 1px dashed gray;
+          }
+        }
+      }
+    }
+  }
+}
