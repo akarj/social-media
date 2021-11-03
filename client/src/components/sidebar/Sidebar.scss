@@ -3,7 +3,7 @@ div.sidebar {
   height: calc(100vh - 50px);
   overflow: hidden;
   &:hover {
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   &::-webkit-scrollbar {
     width: 5px;
