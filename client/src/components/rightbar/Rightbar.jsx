@@ -3,10 +3,10 @@ import { FaBirthdayCake } from "react-icons/fa";
 import { Users } from "../../dummyData";
 import Online from "../online/Online";
 
-export default function Rightbar() {
-  return (
-    <div className="rightbarContainer">
-      <div className="rightbarWrapper">
+export default function Rightbar({ profile }) {
+  const HomeRightbar = () => {
+    return (
+      <>
         <div className="birthdayContainer">
           <FaBirthdayCake className="birthdayIcon" />
           <span className="birthdayText">
@@ -28,6 +28,95 @@ export default function Rightbar() {
             })}
           </ul>
         </section>
+      </>
+    );
+  };
+
+  const ProfileRightbar = () => {
+    return (
+      <section className="Profile">
+        <h4 className="rightbarTitle">User Information</h4>
+        <div className="rightbarInfo">
+          <div className="rightbarInfoItem">
+            <span className="rightbarInfoKey">City:</span>
+            <span className="rightbarInfoValue">Random City</span>
+          </div>
+          <div className="rightbarInfoItem">
+            <span className="rightbarInfoKey">From:</span>
+            <span className="rightbarInfoValue">Random Location</span>
+          </div>
+          <div className="rightbarInfoItem">
+            <span className="rightbarInfoKey">Relationship:</span>
+            <span className="rightbarInfoValue">Single</span>
+          </div>
+        </div>
+        <h4 className="rightbarTitle">User Friend</h4>
+        <div className="rightbarFollowings">
+          <div className="rightbarFollowing">
+            <img
+              src="http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg"
+              alt="Followings"
+              className="rightbarFollowingImg"
+            />
+            <span className="rightbarFollowingName">Random Name</span>
+          </div>
+          <div className="rightbarFollowing">
+            <img
+              src="http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg"
+              alt="Followings"
+              className="rightbarFollowingImg"
+            />
+            <span className="rightbarFollowingName">Random Name</span>
+          </div>
+          <div className="rightbarFollowing">
+            <img
+              src="http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg"
+              alt="Followings"
+              className="rightbarFollowingImg"
+            />
+            <span className="rightbarFollowingName">Random Name</span>
+          </div>
+          <div className="rightbarFollowing">
+            <img
+              src="http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg"
+              alt="Followings"
+              className="rightbarFollowingImg"
+            />
+            <span className="rightbarFollowingName">Random Name</span>
+          </div>
+          <div className="rightbarFollowing">
+            <img
+              src="http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg"
+              alt="Followings"
+              className="rightbarFollowingImg"
+            />
+            <span className="rightbarFollowingName">Random Name</span>
+          </div>
+          <div className="rightbarFollowing">
+            <img
+              src="http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg"
+              alt="Followings"
+              className="rightbarFollowingImg"
+            />
+            <span className="rightbarFollowingName">Random Name</span>
+          </div>
+          <div className="rightbarFollowing">
+            <img
+              src="http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg"
+              alt="Followings"
+              className="rightbarFollowingImg"
+            />
+            <span className="rightbarFollowingName">Random Name</span>
+          </div>
+        </div>
+      </section>
+    );
+  };
+  return (
+    <div className="rightbarContainer">
+      <div className="rightbarWrapper">
+        <ProfileRightbar />
+        {/* <HomeRightbar /> */}
       </div>
     </div>
   );
