@@ -4,11 +4,18 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import { Typography } from "@mui/material";
 import { Users } from "../../dummyData";
+import { useState } from "react";
 
 export default function Post({ post }) {
   const user = Users.filter(user => user.id === post.userId)[0];
-  console.log(user.username);
-  // console.log(post);
+  const [like, setLike] = useState(post.like);
+  const [isLiked, setIsLiked] = useState(false);
+
+  const likeHandler = () => {
+    setLike(prev => (isLiked ? prev - 1 : prev + 1));
+    setIsLiked(!isLiked);
+  };
+
   return (
     <div className="post">
       <div className="postWrapper">
@@ -32,10 +39,15 @@ export default function Post({ post }) {
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
-            <FavoriteBorderIcon className="likeIcon" sx={{ color: "red" }} />
+            <FavoriteBorderIcon
+              className="likeIcon"
+              sx={{ color: "red" }}
+              onClick={likeHandler}
+            />
             <ThumbUpOutlinedIcon
               className="likeIcon"
               sx={{ color: "goldenrod" }}
+              onClick={likeHandler}
             />
             <Typography
               className="postLikeCounter"
@@ -43,7 +55,7 @@ export default function Post({ post }) {
               gutterBottom
               sx={{ fontSize: 15 }}
             >
-              {post.like} people liked it
+              {like} people liked it
             </Typography>
           </div>
           <div className="postBottomRight">
