@@ -1,5 +1,4 @@
 import "./Sidebar.scss";
-// import RssFeed from "@mui/icons-material/RssFeed";
 import {
   RssFeed,
   Chat,
@@ -11,6 +10,8 @@ import {
   Event,
   School,
 } from "@mui/icons-material";
+import { Users } from "../../dummyData";
+import CloseFriend from "../closeFriend/CloseFriend";
 export default function Sidebar() {
   return (
     <div className="sidebar">
@@ -56,70 +57,9 @@ export default function Sidebar() {
         <button className="sidebarButton">Show More...</button>
         <hr />
         <ul className="sidebarFriendList">
-          <li className="sidebarFriend">
-            <img
-              src="https://source.unsplash.com/32x32/?person"
-              alt="p1"
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFriendName">Name</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="https://source.unsplash.com/32x32/?person"
-              alt="p2"
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFriendName">Name</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="https://source.unsplash.com/32x32/?person"
-              alt="p3"
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFriendName">Name</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="https://source.unsplash.com/32x32/?person"
-              alt="p4"
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFriendName">Name</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="https://source.unsplash.com/32x32/?person"
-              alt="p5"
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFriendName">Name</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="https://source.unsplash.com/32x32/?person"
-              alt="p6"
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFriendName">Name</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="https://source.unsplash.com/32x32/?person"
-              alt="p7"
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFriendName">Name</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="https://source.unsplash.com/32x32/?person"
-              alt="p8"
-              className="sidebarFriendImg"
-            />
-            <span className="sidebarFriendName">Name</span>
-          </li>
+          {Users.map(user => (
+            <CloseFriend key={user.id} user={user} />
+          ))}
         </ul>
       </div>
     </div>

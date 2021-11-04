@@ -1,5 +1,7 @@
 import "./Rightbar.scss";
 import { FaBirthdayCake } from "react-icons/fa";
+import { Users } from "../../dummyData";
+import Online from "../online/Online";
 
 export default function Rightbar() {
   return (
@@ -21,116 +23,9 @@ export default function Rightbar() {
         <h4 className="rightbarBottomTitle">Online Friends</h4>
         <section className="rightbarActiveFriendListContainerSection">
           <ul className="rightbarBottomFriendList">
-            <li className="rightbarFriend">
-              <div className="rightbarBottomProfileImgContainer">
-                <img
-                  src="https://source.unsplash.com/weekly?person"
-                  alt="friend"
-                  className="rightbarProfileImg"
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Doe</span>
-            </li>
-            <li className="rightbarFriend">
-              <div className="rightbarBottomProfileImgContainer">
-                <img
-                  src="https://source.unsplash.com/weekly?person"
-                  alt="friend"
-                  className="rightbarProfileImg"
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Doe</span>
-            </li>
-            <li className="rightbarFriend">
-              <div className="rightbarBottomProfileImgContainer">
-                <img
-                  src="https://source.unsplash.com/weekly?person"
-                  alt="friend"
-                  className="rightbarProfileImg"
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Doe</span>
-            </li>
-            <li className="rightbarFriend">
-              <div className="rightbarBottomProfileImgContainer">
-                <img
-                  src="https://source.unsplash.com/weekly?person"
-                  alt="friend"
-                  className="rightbarProfileImg"
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Doe</span>
-            </li>
-            <li className="rightbarFriend">
-              <div className="rightbarBottomProfileImgContainer">
-                <img
-                  src="https://source.unsplash.com/weekly?person"
-                  alt="friend"
-                  className="rightbarProfileImg"
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Doe</span>
-            </li>
-            <li className="rightbarFriend">
-              <div className="rightbarBottomProfileImgContainer">
-                <img
-                  src="https://source.unsplash.com/weekly?person"
-                  alt="friend"
-                  className="rightbarProfileImg"
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Doe</span>
-            </li>
-            <li className="rightbarFriend">
-              <div className="rightbarBottomProfileImgContainer">
-                <img
-                  src="https://source.unsplash.com/weekly?person"
-                  alt="friend"
-                  className="rightbarProfileImg"
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Doe</span>
-            </li>
-            <li className="rightbarFriend">
-              <div className="rightbarBottomProfileImgContainer">
-                <img
-                  src="https://source.unsplash.com/weekly?person"
-                  alt="friend"
-                  className="rightbarProfileImg"
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Doe</span>
-            </li>
-            <li className="rightbarFriend">
-              <div className="rightbarBottomProfileImgContainer">
-                <img
-                  src="https://source.unsplash.com/weekly?person"
-                  alt="friend"
-                  className="rightbarProfileImg"
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Doe</span>
-            </li>
-            <li className="rightbarFriend">
-              <div className="rightbarBottomProfileImgContainer">
-                <img
-                  src="https://source.unsplash.com/weekly?person"
-                  alt="friend"
-                  className="rightbarProfileImg"
-                />
-                <span className="rightbarOnline"></span>
-              </div>
-              <span className="rightbarUsername">John Doe</span>
-            </li>
+            {Users.map(user => {
+              return <Online key={user.id} user={user} />;
+            })}
           </ul>
         </section>
       </div>

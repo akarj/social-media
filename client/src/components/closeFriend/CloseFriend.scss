@@ -1,0 +1,16 @@
+li.sidebarListItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  .sidebarIcon {
+    margin-right: 15px;
+  }
+  span.sidebarListItemText {
+    margin: 4px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -2,52 +2,52 @@ export const Users = [
   {
     id: 1,
     profilePicture: "https://source.unsplash.com/400x400/person",
-    username: "Safak Kocaoglu",
+    username: "Goku",
   },
   {
     id: 2,
     profilePicture: "https://source.unsplash.com/400x400/person",
-    username: "Janell Shrum",
+    username: "Kakashi Hatake",
   },
   {
     id: 3,
     profilePicture: "https://source.unsplash.com/400x400/person",
-    username: "Alex Durden",
+    username: "Gojo Satoru",
   },
   {
     id: 4,
     profilePicture: "https://source.unsplash.com/400x400/person",
-    username: "Dora Hawks",
+    username: "Tanjiro",
   },
   {
     id: 5,
     profilePicture: "https://source.unsplash.com/400x400/person",
-    username: "Thomas Holden",
+    username: "Saitama",
   },
   {
     id: 6,
     profilePicture: "https://source.unsplash.com/400x400/person",
-    username: "Shirley Beauchamp",
+    username: "Tsubomi",
   },
   {
     id: 7,
     profilePicture: "https://source.unsplash.com/400x400/person",
-    username: "Travis Bennett",
+    username: "Shigeo Kageyama",
   },
   {
     id: 8,
     profilePicture: "https://source.unsplash.com/400x400/person",
-    username: "Kristen Thomas",
+    username: "Osamu Dazai",
   },
   {
     id: 9,
     profilePicture: "https://source.unsplash.com/400x400/person",
-    username: "Gary Duty",
+    username: "Toshinori Yagi",
   },
   {
     id: 10,
     profilePicture: "https://source.unsplash.com/400x400/person",
-    username: "Safak Kocaoglu",
+    username: "Thomas Shelby",
   },
 ];
 

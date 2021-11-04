@@ -2,8 +2,13 @@ import "./Post.scss";
 import { MoreVert } from "@mui/icons-material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
-import { Grid, Typography } from "@mui/material";
-export default function Post() {
+import { Typography } from "@mui/material";
+import { Users } from "../../dummyData";
+
+export default function Post({ post }) {
+  const user = Users.filter(user => user.id === post.userId)[0];
+  console.log(user.username);
+  // console.log(post);
   return (
     <div className="post">
       <div className="postWrapper">
@@ -11,28 +16,22 @@ export default function Post() {
           <div className="postTopLeft">
             <img
               src="https://source.unsplash.com/random"
-              alt="Profile"
+              alt={user.username}
               className="postProfileImg"
             />
-            <span className="postUsername">A NAME</span>
-            <span className="postDate">4 hours ago...</span>
+            <span className="postUsername">{user.username}</span>
+            <span className="postDate">{post.date}</span>
           </div>
           <div className="postTopRight">
             <MoreVert className="verticalHam" />
           </div>
         </div>
         <div className="postCenter">
-          <span className="postText">The First Post :)</span>
-          <img
-            className="postImg"
-            src="https://source.unsplash.com/random"
-            alt="post"
-          />
+          <span className="postText">{post?.desc}</span>
+          <img className="postImg" src={post.photo} alt={user.username} />
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
-            {/* <Grid container sx={{ color: "text.primary" }}>
-              <Grid item xs={4}> */}
             <FavoriteBorderIcon className="likeIcon" sx={{ color: "red" }} />
             <ThumbUpOutlinedIcon
               className="likeIcon"
@@ -44,14 +43,11 @@ export default function Post() {
               gutterBottom
               sx={{ fontSize: 15 }}
             >
-              32 people liked it
+              {post.like} people liked it
             </Typography>
-            {/* </Grid>
-            </Grid> */}
-            {/* <span className="postLikeCounter">32 people liked it</span> */}
           </div>
           <div className="postBottomRight">
-            <span className="postCommentText">9 comments</span>
+            <span className="postCommentText">{post.comment} comments</span>
           </div>
         </div>
       </div>
