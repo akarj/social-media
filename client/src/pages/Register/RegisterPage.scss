@@ -1,0 +1,77 @@
+div.register {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  div.registerWrapper {
+    width: 70%;
+    height: 70%;
+    display: flex;
+
+    div.registerLeft,
+    div.registerRight {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    div.registerLeft {
+      h3.registerLogo {
+        font-size: 4rem;
+        font-weight: 800;
+        color: #1775ee;
+        margin-bottom: 0.9rem;
+      }
+      span.registerDesc {
+        font-size: 24px;
+      }
+    }
+    div.registerRight {
+      div.registerBox {
+        height: 25rem;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        input.registerInput {
+          height: 50px;
+          border-radius: 10px;
+          border: 1px solid gray;
+          font-size: 1.2rem;
+          padding-left: 1.5rem;
+          &:focus {
+            outline: none;
+          }
+        }
+        button.registerButton {
+          height: 50px;
+          border-radius: 10px;
+          border: none;
+          background-color: #1775ee;
+          color: white;
+          font-size: 1.3rem;
+          font-weight: 500;
+          cursor: pointer;
+        }
+
+        button.registerLoginButton {
+          width: 60%;
+          align-self: center;
+          height: 50px;
+          border-radius: 10px;
+          border: none;
+          background-color: #42b72a;
+          color: white;
+          font-size: 1.25rem;
+          font-weight: 500;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

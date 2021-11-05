@@ -1,5 +1,6 @@
 import React from "react";
-import Login from "./pages/Login/Login";
+import RegisterPage from "./pages/Register/RegisterPage";
+// import Login from "./pages/Login/Login";
 // import RegisterPage from "./pages/Register/RegisterPage";
 // import ProfilePage from "./pages/profile/ProfilePage";
 // import Homepage from "./pages/Homepage/Homepage";
@@ -9,7 +10,8 @@ export default function App() {
   return (
     <div>
       {/* <Homepage /> */}
-      <Login />
+      {/* <Login /> */}
+      <RegisterPage />
     </div>
   );
 }
