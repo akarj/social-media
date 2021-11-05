@@ -1,12 +1,12 @@
 export const Users = [
   {
     id: 1,
-    profilePicture: "https://source.unsplash.com/400x400/person",
+    profilePicture: "https://source.unsplash.com/featured/?profile,human",
     username: "Goku",
   },
   {
     id: 2,
-    profilePicture: "https://source.unsplash.com/400x400/person",
+    profilePicture: "https://source.unsplash.com/400x400/",
     username: "Kakashi Hatake",
   },
   {
@@ -55,7 +55,7 @@ export const Posts = [
   {
     id: 1,
     desc: "Love For All, Hatred For None.",
-    photo: "https://source.unsplash.com/400x400/nature",
+    photo: "https://source.unsplash.com/400x400/?nature",
     date: "5 mins ago",
     userId: 1,
     like: 32,
@@ -63,7 +63,7 @@ export const Posts = [
   },
   {
     id: 2,
-    photo: "https://source.unsplash.com/500x500/water",
+    photo: "https://source.unsplash.com/500x500/?water",
     date: "15 mins ago",
     userId: 2,
     like: 2,
@@ -72,7 +72,7 @@ export const Posts = [
   {
     id: 3,
     desc: "Every moment is a fresh beginning.",
-    photo: "https://source.unsplash.com/600x600/beauty",
+    photo: "https://source.unsplash.com/featured/beauty",
     date: "1 hour ago",
     userId: 3,
     like: 61,
@@ -80,7 +80,7 @@ export const Posts = [
   },
   {
     id: 4,
-    photo: "https://source.unsplash.com/600x600/water",
+    photo: "https://source.unsplash.com/featured/?water",
     date: "4 hours ago",
     userId: 4,
     like: 7,
@@ -88,7 +88,7 @@ export const Posts = [
   },
   {
     id: 5,
-    photo: "https://source.unsplash.com/700x700/nature",
+    photo: "https://source.unsplash.com/700x700/?nature",
     date: "5 hours ago",
     userId: 5,
     like: 23,
@@ -96,7 +96,7 @@ export const Posts = [
   },
   {
     id: 6,
-    photo: "https://source.unsplash.com/600x600/food",
+    photo: "https://source.unsplash.com/600x600/?food",
     date: "1 day ago",
     userId: 6,
     like: 44,
@@ -105,7 +105,7 @@ export const Posts = [
   {
     id: 7,
     desc: "Never regret anything that made you smile.",
-    photo: "https://source.unsplash.com/600x600/notebook,paper,pen",
+    photo: "https://source.unsplash.com/600x600/?notebook,paper,pen",
     date: "2 days ago",
     userId: 7,
     like: 52,
@@ -113,7 +113,7 @@ export const Posts = [
   },
   {
     id: 8,
-    photo: "https://source.unsplash.com/600x600/animal",
+    photo: "https://source.unsplash.com/600x600/?animal",
     date: "3 days ago",
     userId: 8,
     like: 15,
@@ -122,7 +122,7 @@ export const Posts = [
   {
     id: 9,
     desc: "Change the world by being yourself.",
-    photo: "https://source.unsplash.com/600x600/anime",
+    photo: "https://source.unsplash.com/600x600/?anime",
     date: "5 days ago",
     userId: 9,
     like: 11,
@@ -130,7 +130,7 @@ export const Posts = [
   },
   {
     id: 10,
-    photo: "https://source.unsplash.com/600x500/nature",
+    photo: "https://source.unsplash.com/600x500/?nature",
     date: "1 week ago",
     userId: 10,
     like: 104,

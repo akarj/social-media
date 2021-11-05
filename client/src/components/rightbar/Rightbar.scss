@@ -57,3 +57,49 @@ div.rightbarContainer {
     }
   }
 }
+
+section.Profile {
+  h4.rightbarTitle {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  div.rightbarInfo {
+    margin-bottom: 30px;
+    div.rightbarInfoItem {
+      margin-bottom: 10px;
+
+      span.rightbarInfoKey {
+        font-weight: 500;
+        margin-right: 15px;
+        color: #555;
+      }
+      span.rightbarInfoValue {
+        font-weight: 300;
+      }
+    }
+  }
+  h4.rightbarTitle {
+    //
+  }
+  div.rightbarFollowings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    div.rightbarFollowing {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      cursor: pointer;
+      img.rightbarFollowingImg {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+      span.rightbarFollowingName {
+        //
+      }
+    }
+  }
+}
