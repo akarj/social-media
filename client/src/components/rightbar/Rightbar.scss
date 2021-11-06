@@ -34,7 +34,6 @@ div.rightbarContainer {
     div.advertisementImgDiv {
       img.rightbarAd {
         width: 100%;
-        // height: 5rem;
         height: 100px;
         border-radius: 10px;
         margin: 30px 0;
@@ -79,9 +78,7 @@ section.Profile {
       }
     }
   }
-  h4.rightbarTitle {
-    //
-  }
+
   div.rightbarFollowings {
     display: flex;
     flex-wrap: wrap;
@@ -96,9 +93,6 @@ section.Profile {
         height: 100px;
         object-fit: cover;
         border-radius: 5px;
-      }
-      span.rightbarFollowingName {
-        //
       }
     }
   }
