@@ -1,15 +1,28 @@
 import Post from "../post/Post";
 import Share from "../share/Share";
 import "./Feed.scss";
-import { Posts } from "../../dummyData";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export default function Feed() {
+  const [Posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const getPost = async () => {
+      const response = await axios.get(
+        "posts/timeline/617bea2a69175a3ef800938e"
+      );
+      setPosts(response.data);
+    };
+    getPost();
+  }, []);
+
   return (
     <div className="feed">
       <div className="feedContainer">
         <Share />
         {Posts.map(post => {
-          return <Post key={post.id} post={post} />;
+          return <Post key={`${post._id}`} post={post} />;
         })}
       </div>
     </div>

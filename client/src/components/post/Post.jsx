@@ -2,14 +2,25 @@ import "./Post.scss";
 import { MoreVert } from "@mui/icons-material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
+import { format } from "timeago.js";
+import Avatar from "@mui/material/Avatar";
 import { Typography } from "@mui/material";
-import { Users } from "../../dummyData";
-import { useState } from "react";
+// import { Users } from "../../dummyData";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Post({ post }) {
-  const user = Users.filter(user => user.id === post.userId)[0];
-  const [like, setLike] = useState(post.like);
+  const [user, setUser] = useState({});
+  const [like, setLike] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
+
+  useEffect(() => {
+    const getUser = async () => {
+      const response = await axios.get(`users/${post.userId}`);
+      setUser(response.data);
+    };
+    getUser();
+  }, [post.userId]);
 
   const likeHandler = () => {
     setLike(prev => (isLiked ? prev - 1 : prev + 1));
@@ -21,13 +32,10 @@ export default function Post({ post }) {
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
-            <img
-              src="https://source.unsplash.com/random"
-              alt={user.username}
-              className="postProfileImg"
-            />
+            <Avatar src={user.profilePicture} alt={user.username} />
+
             <span className="postUsername">{user.username}</span>
-            <span className="postDate">{post.date}</span>
+            <span className="postDate">{format(post.createdAt)}</span>
           </div>
           <div className="postTopRight">
             <MoreVert className="verticalHam" />
@@ -35,7 +43,7 @@ export default function Post({ post }) {
         </div>
         <div className="postCenter">
           <span className="postText">{post?.desc}</span>
-          <img className="postImg" src={post.photo} alt={user.username} />
+          <img className="postImg" src={post.img} alt={user.username} />
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">

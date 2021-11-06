@@ -4,15 +4,15 @@ import { BsPersonFill } from "react-icons/bs";
 import { SiMessenger } from "react-icons/si";
 import { IoMdNotifications } from "react-icons/io";
 import Avatar from "@mui/material/Avatar";
-// import { Badge, IconButton, Menu, MenuItem } from "@mui/material";
-// import Person from "@mui/icons-material/Person";
-// import NotificationsIcon from "@mui/icons-material/Notifications";
-// import MessageIcon from "@mui/icons-material/Message";
+import { Link } from "react-router-dom";
+
 export default function Topbar() {
   return (
     <div className="topbarContainer">
       <div className="topbarLeft">
-        <div className="logo">nonMeta</div>
+        <Link to="/" className="link">
+          <span className="logo">nonMeta</span>
+        </Link>
       </div>
       <div className="topbarCenter">
         <div className="searchbar">

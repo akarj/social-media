@@ -6,7 +6,7 @@ const morgan = require("morgan");
 const helmet = require("helmet");
 const PORT = process.env.PORT;
 const MONGO_URL = process.env.REACT_APP_MONGO_URL;
-const path = require("path");
+// const path = require("path");
 const usersRoute = require("./Routes/UsersRoute");
 const authRoute = require("./Routes/AuthRoute");
 const postRoute = require("./Routes/PostRoute");
@@ -30,13 +30,13 @@ app.use(morgan("common"));
 })();
 
 //[Heroku Section]
-if (process.env.NODE_ENV == "production") {
-  app.use(express.static("client/build"));
-  const path = require("path");
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
-}
+// if (process.env.NODE_ENV == "production") {
+//   app.use(express.static("client/build"));
+//   const path = require("path");
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+//   });
+// }
 
 //[Routes]
 app.get("/", (req, res) => {
