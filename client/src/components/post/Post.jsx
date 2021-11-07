@@ -5,12 +5,15 @@ import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import { format } from "timeago.js";
 import Avatar from "@mui/material/Avatar";
 import { Typography } from "@mui/material";
-// import { Users } from "../../dummyData";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Post({ post }) {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({
+    username: "",
+    profilePicture: "",
+  });
   const [like, setLike] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
 
@@ -32,7 +35,9 @@ export default function Post({ post }) {
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
-            <Avatar src={user.profilePicture} alt={user.username} />
+            <Link to={`profile/${user.username}`}>
+              <Avatar src={user.profilePicture} alt={user.username} />
+            </Link>
 
             <span className="postUsername">{user.username}</span>
             <span className="postDate">{format(post.createdAt)}</span>
@@ -67,7 +72,9 @@ export default function Post({ post }) {
             </Typography>
           </div>
           <div className="postBottomRight">
-            <span className="postCommentText">{post.comment} comments</span>
+            <span className="postCommentText">
+              {post.comment && `${post.comment} comments`}
+            </span>
           </div>
         </div>
       </div>

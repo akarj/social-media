@@ -1,5 +1,7 @@
 const router = require("express").Router();
+const PostModel = require("../Models/PostModel");
 const Post = require("../Models/PostModel");
+const UserModel = require("../Models/UserModel");
 const User = require("../Models/UserModel");
 
 //[Posts route entry]
@@ -96,6 +98,23 @@ router.get("/timeline/:userId", async (req, res) => {
       })
     );
     return res.status(200).json(userPosts.concat(...friendPosts));
+  } catch (err) {
+    console.log({ message: "error in getting the post", err });
+    return res.status(500).json({ message: "error in getting the post" });
+  }
+});
+
+//[Get One User's all Posts]
+router.get("/profile/:username", async (req, res) => {
+  try {
+    const user = await UserModel.findOne({
+      username: req.params.username,
+    });
+    const posts = await PostModel.find({
+      userId: user._id,
+    });
+
+    return res.status(200).json(posts);
   } catch (err) {
     console.log({ message: "error in getting the post", err });
     return res.status(500).json({ message: "error in getting the post" });

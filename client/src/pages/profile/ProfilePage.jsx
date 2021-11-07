@@ -5,6 +5,7 @@ import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
 
 export default function ProfilePage() {
+  const user = { username: "Kakashi" };
   return (
     <>
       <Topbar />
@@ -30,7 +31,7 @@ export default function ProfilePage() {
             </div>
           </div>
           <div className="profileRightBottom">
-            <Feed />
+            <Feed username={user.username} />
             <Rightbar profile />
           </div>
         </div>

@@ -15,6 +15,7 @@ const postRoute = require("./Routes/PostRoute");
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
+app.use(express.static(__dirname + "/public"));
 
 //[Mongo DB Connection]
 (async () => {
