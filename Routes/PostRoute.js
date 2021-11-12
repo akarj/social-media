@@ -107,6 +107,7 @@ router.get("/timeline/:userId", async (req, res) => {
 //[Get One User's all Posts]
 router.get("/profile/:username", async (req, res) => {
   try {
+    console.log("username in backend", req.params.username);
     const user = await UserModel.findOne({
       username: req.params.username,
     });

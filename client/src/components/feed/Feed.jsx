@@ -10,18 +10,17 @@ export default function Feed({ username }) {
   useEffect(() => {
     const getPost = async () => {
       console.log(username === "Kakashi");
-      // const response = username
-      //   ? //   ? await axios.get("posts/profile/" + username)
-      //     await axios.get("http://localhost:5000/api/posts/profile/Kakashi")
-      //   : await axios.get("posts/timeline/617bea2a69175a3ef800938e");
-      const response = await axios.get(
-        "http://localhost:3000/posts/profile/Kakashi"
-      );
-
+      const response = username
+        ? await axios.get("/posts/profile/" + username)
+        : await axios.get("posts/timeline/617bea2a69175a3ef800938e");
+      // const response = await axios.get(
+      //   "posts/timeline/617bea2a69175a3ef800938e"
+      // );
+      console.log("response feed", response);
       setPosts(response.data);
     };
     getPost();
-  }, []);
+  }, [username]);
 
   return (
     <div className="feed">
