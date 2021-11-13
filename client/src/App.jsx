@@ -13,7 +13,9 @@ export default function App() {
         <Route path="/" element={<Homepage />}></Route>
         <Route path="login" element={<Login />} />
         <Route path="register" element={<RegisterPage />} />
-
+        {
+          // used navigation proble
+        }
         <Route path="profile/:username" element={<ProfilePage />} />
       </Routes>
     </Router>
