@@ -19,8 +19,12 @@ export default function Post({ post }) {
 
   useEffect(() => {
     const getUser = async () => {
-      const response = await axios.get(`users/${post.userId}`);
-      setUser(response.data);
+      try {
+        const response = await axios.get(`users/${post.userId}`);
+        setUser(response.data);
+      } catch (err) {
+        console.log(err, "error in getting response Post");
+      }
     };
     getUser();
   }, [post.userId]);

@@ -41,6 +41,6 @@ app.get("/", (req, res) => {
   res.send(`Hello!!`);
 });
 app.use("/api/users", usersRoute);
-app.use("api/profile/users", usersRoute);
+app.use("/api/profile/users", usersRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/posts", postRoute);

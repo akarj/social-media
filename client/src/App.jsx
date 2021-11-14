@@ -14,7 +14,9 @@ export default function App() {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<RegisterPage />} />
         {
-          // used navigation proble
+          // used navigation problem
+          // issue http://localhost:3000/profile/users/617bea2a69175a3ef800938e
+          //  in Post.jsx : 22
         }
         <Route path="profile/:username" element={<ProfilePage />} />
       </Routes>
