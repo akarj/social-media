@@ -1,7 +1,5 @@
 const router = require("express").Router();
-const PostModel = require("../Models/PostModel");
 const Post = require("../Models/PostModel");
-const UserModel = require("../Models/UserModel");
 const User = require("../Models/UserModel");
 
 //[Posts route entry]
@@ -108,10 +106,10 @@ router.get("/timeline/:userId", async (req, res) => {
 router.get("/profile/:username", async (req, res) => {
   try {
     console.log("username in backend", req.params.username);
-    const user = await UserModel.findOne({
+    const user = await User.findOne({
       username: req.params.username,
     });
-    const posts = await PostModel.find({
+    const posts = await Post.find({
       userId: user._id,
     });
 
