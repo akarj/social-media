@@ -6,13 +6,6 @@ const morgan = require("morgan");
 const helmet = require("helmet");
 const PORT = process.env.PORT;
 const MONGO_URL = process.env.REACT_APP_MONGO_URL;
-// const path = require("path");
-// const cors = require("cors");
-// app.use(
-//   cors({
-//     origin: "http://192.168.20.105:3000",
-//   })
-// );
 const usersRoute = require("./Routes/UsersRoute");
 const authRoute = require("./Routes/AuthRoute");
 const postRoute = require("./Routes/PostRoute");
