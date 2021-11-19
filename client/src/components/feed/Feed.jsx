@@ -14,7 +14,7 @@ export default function Feed({ username }) {
         ? await axios.get("/posts/profile/" + username)
         : await axios.get("posts/timeline/617bea2a69175a3ef800938e");
 
-      console.log("response feed worked", response);
+      // console.log("response feed worked", response);
       setPosts(response.data);
     };
     getPost();
