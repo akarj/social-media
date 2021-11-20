@@ -22,10 +22,8 @@ router.post("/register", async (req, res) => {
 
     //Save user and return response
     const user = await newUser.save();
-    console.log(user);
     res.status(200).json(user);
   } catch (err) {
-    console.log(err);
     res.status(500).send("not ok");
   }
 });
@@ -40,12 +38,10 @@ router.post("/login", async (req, res) => {
         req.body.password,
         user.password
       );
-      console.log("validPassword", validPassword);
       if (!validPassword) res.status(401).json("wrong credentials!!");
       else res.status(200).json(user);
     }
   } catch (err) {
-    console.log(err);
     res.status(500).json({ msg: err });
   }
 });

@@ -3,9 +3,24 @@ import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
+import { useEffect, useState } from "react";
+import Axios from "axios";
 
 export default function ProfilePage() {
-  // const user = { username: "Kakashi" };
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    const getUser = async () => {
+      try {
+        const response = await Axios.get(`users?username=Kakashi`);
+        setUser(response.data);
+      } catch (err) {
+        console.log(err, "error in getting response Post");
+      }
+    };
+    getUser();
+  }, []);
+
   return (
     <>
       <Topbar />
@@ -21,7 +36,7 @@ export default function ProfilePage() {
               />
               <img
                 className="profileUserImg"
-                src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80"
+                src={user?.profilePicture}
                 alt="silhouette of man illustration"
               />
             </div>

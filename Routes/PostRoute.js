@@ -14,7 +14,6 @@ router.post("/", async (req, res) => {
     const savedPost = await newPost.save();
     return res.status(200).json(savedPost);
   } catch (err) {
-    console.log("Error in creating New Post!!");
     return res.status(500).json(err);
   }
 });
@@ -32,7 +31,6 @@ router.put("/:id", async (req, res) => {
         .json({ message: "You can update only your post!!" });
     }
   } catch (err) {
-    console.log("Error in ");
     return res.status(500).json({ message: "Error in Updating Post!!" });
   }
 });
@@ -50,7 +48,6 @@ router.delete("/:id", async (req, res) => {
         .json({ message: "You can delete only your post!!" });
     }
   } catch (err) {
-    console.log("Error in Deleting the Post!!");
     return res
       .status(500)
       .json({ message: "Error in deleting Post!!", err: { ...err } });
@@ -69,7 +66,6 @@ router.put("/:id/like", async (req, res) => {
       return res.status(200).json({ message: "Post has been disliked!!" });
     }
   } catch (err) {
-    console.log("Error in liking the post!!");
     return res.status(500).json({ message: "Error in like of the post", err });
   }
 });
@@ -80,7 +76,6 @@ router.get("/:id", async (req, res) => {
     const post = await Post.findById(req.params.id);
     return res.status(200).json(post);
   } catch (err) {
-    console.log({ message: "error in getting the post", err });
     return res.status(500).json({ message: "error in getting the post" });
   }
 });
@@ -97,7 +92,6 @@ router.get("/timeline/:userId", async (req, res) => {
     );
     return res.status(200).json(userPosts.concat(...friendPosts));
   } catch (err) {
-    console.log({ message: "error in getting the post", err });
     return res.status(500).json({ message: "error in getting the post" });
   }
 });
@@ -105,7 +99,6 @@ router.get("/timeline/:userId", async (req, res) => {
 //[Get One User's all Posts]
 router.get("/profile/:username", async (req, res) => {
   try {
-    console.log("username in backend", req.params.username);
     const user = await User.findOne({
       username: req.params.username,
     });
@@ -115,7 +108,6 @@ router.get("/profile/:username", async (req, res) => {
 
     return res.status(200).json(posts);
   } catch (err) {
-    console.log({ message: "error in getting the post", err });
     return res.status(500).json({ message: "error in getting the post" });
   }
 });

@@ -9,7 +9,6 @@ router.put("/:id", async (req, res) => {
         const salt = await bcrypt.genSalt(10);
         req.body.password = await bcrypt.hash(req.body.password, salt);
       } catch (err) {
-        console.log("User's Password not changed");
         return res
           .status(500)
           .json({ message: "error in changing the password", err });
@@ -23,7 +22,6 @@ router.put("/:id", async (req, res) => {
         .status(200)
         .json({ message: "User Details has been updated!!" });
     } catch (err) {
-      console.log("Error in updating user info!!");
       return res.status(500).json({
         message: "Error in updating user password!!",
         err,
@@ -43,7 +41,6 @@ router.delete("/:id", async (req, res) => {
         .status(200)
         .json({ message: "User Account has been deleted!!" });
     } catch (err) {
-      console.log("Error in deleting user Account!!");
       return res.status(500).json({
         message: "Error in deleting user Account!!",
         err,
@@ -55,14 +52,19 @@ router.delete("/:id", async (req, res) => {
 });
 
 //[Get A User]
-router.get("/:id", async (req, res) => {
+router.get("/", async (req, res) => {
+  const userId = req.query.userId;
+  const username = req.query.username;
+
   try {
-    const user = await User.findById(req.params.id);
+    const user = userId
+      ? await User.findById(userId)
+      : await User.findOne({ username: username });
+
     const { password, updatedAt, createdAt, _id, __v, ...other } = user._doc;
 
     res.status(200).json(other);
   } catch (err) {
-    console.log("Error in getting the user information!!", err);
     return res.status(500).json({
       message: "Error in getting User Info!!",
     });
@@ -87,7 +89,6 @@ router.put("/:id/follow", async (req, res) => {
           .json({ message: "User Already follows the requested user" });
       }
     } catch (err) {
-      console.log("Error in following the User");
       res.status(500).json({ message: "Error in following the User", err });
     }
   } else {
@@ -115,7 +116,6 @@ router.put("/:id/unfollow", async (req, res) => {
           .json({ message: "User Does not follow requested user" });
       }
     } catch (err) {
-      console.log("Error in following the User");
       res.status(500).json({ message: "Error in unfollowing the User", err });
     }
   } else {
