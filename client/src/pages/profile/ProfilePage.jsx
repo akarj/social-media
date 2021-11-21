@@ -32,23 +32,24 @@ export default function ProfilePage() {
               <img
                 className="profileCoverImg"
                 src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80"
-                alt="blue and brown steel bridge"
+                alt={user?.username}
               />
               <img
                 className="profileUserImg"
                 src={user?.profilePicture}
-                alt="silhouette of man illustration"
+                alt={user?.username}
               />
             </div>
             <div className="profileInfo">
-              <h4 className="profileInfoName">A Name</h4>
-              <span className="profileInfoDesc">A description</span>
+              <h4 className="profileInfoName">{user?.username}</h4>
+              <span className="profileInfoDesc">
+                {user ? (user.desc ? user.desc : "") : ""}
+              </span>
             </div>
           </div>
           <div className="profileRightBottom">
             <Feed username="Kakashi" />
-            {/* <Feed username={user.username} /> */}
-            <Rightbar profile />
+            <Rightbar user={user} />
           </div>
         </div>
       </div>
