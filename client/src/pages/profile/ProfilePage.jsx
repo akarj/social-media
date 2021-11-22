@@ -5,21 +5,23 @@ import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
 import { useEffect, useState } from "react";
 import Axios from "axios";
+import { useParam, useParams } from "react-router";
 
 export default function ProfilePage() {
   const [user, setUser] = useState();
+  const username = useParams().username;
 
   useEffect(() => {
     const getUser = async () => {
       try {
-        const response = await Axios.get(`users?username=Kakashi`);
+        const response = await Axios.get(`users?username=${username}`);
         setUser(response.data);
       } catch (err) {
         console.log(err, "error in getting response Post");
       }
     };
     getUser();
-  }, []);
+  }, [username]);
 
   return (
     <>
@@ -48,7 +50,7 @@ export default function ProfilePage() {
             </div>
           </div>
           <div className="profileRightBottom">
-            <Feed username="Kakashi" />
+            <Feed username={username} />
             <Rightbar user={user} />
           </div>
         </div>
