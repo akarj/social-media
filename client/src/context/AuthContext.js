@@ -8,7 +8,7 @@ const INITIAL_STATE = {
 
 export const AuthContext = createContext(INITIAL_STATE);
 
-export const AuthContextProvider = ({ childer }) => {
+export const AuthContextProvider = ({ childern }) => {
   const [state, dispatch] = useReducer(AuthContext, INITIAL_STATE);
 
   return (
