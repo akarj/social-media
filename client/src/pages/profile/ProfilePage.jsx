@@ -5,7 +5,7 @@ import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
 import { useEffect, useState } from "react";
 import Axios from "axios";
-import { useParam, useParams } from "react-router";
+import { useParams } from "react-router";
 
 export default function ProfilePage() {
   const [user, setUser] = useState();
