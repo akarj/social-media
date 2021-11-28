@@ -1,11 +1,11 @@
-import { Axios } from "axios";
+import axios from "axios";
 
 export const loginCall = async (userCredential, dispatch) => {
   dispatch({ type: "LOGIN_START" });
   try {
-    const response = await Axios.post("auth/login", userCredential);
-    dispatch({ type: "LOGIN_SUCCESS", payload: response.data });
+    const res = await axios.post("auth/login", userCredential);
+    dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
   } catch (error) {
-    dispatch({ type: "LOGIN_FAILURE", payload: response.data });
+    dispatch({ type: "LOGIN_FAILURE", error });
   }
 };
