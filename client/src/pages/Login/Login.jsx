@@ -10,13 +10,13 @@ export default function Login() {
 
   const formSubmitHandler = e => {
     e.preventDefault();
-    console.log(user, isFetching, error);
 
     loginCall(
       { email: email.current.value, password: password.current.value },
       dispatch
     );
   };
+  console.log(isFetching);
 
   return (
     <div className="login">
@@ -42,7 +42,9 @@ export default function Login() {
               required
               ref={password}
             />
-            <button className="loginButton">Log In</button>
+            <button className="loginButton">
+              {isFetching ? "Loading" : "Log In"}
+            </button>
             <span className="loginForgot">Forgot Password?</span>
             <button className="loginRegisterButton">
               Create a New Account
