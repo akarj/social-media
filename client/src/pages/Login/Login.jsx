@@ -1,6 +1,7 @@
 import { useRef, useContext } from "react";
 import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
+import { CircularProgress } from "@mui/material";
 import "./Login.scss";
 
 export default function Login() {
@@ -16,7 +17,6 @@ export default function Login() {
       dispatch
     );
   };
-  console.log(isFetching);
 
   return (
     <div className="login">
@@ -43,7 +43,11 @@ export default function Login() {
               ref={password}
             />
             <button className="loginButton">
-              {isFetching ? "Loading" : "Log In"}
+              {isFetching ? (
+                <CircularProgress sx={{ color: "white" }} />
+              ) : (
+                "Log In"
+              )}
             </button>
             <span className="loginForgot">Forgot Password?</span>
             <button className="loginRegisterButton">
