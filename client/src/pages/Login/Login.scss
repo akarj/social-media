@@ -57,6 +57,10 @@ div.login {
           font-size: 1.4rem;
           font-weight: 500;
           cursor: pointer;
+          &:disabled {
+            cursor: not-allowed;
+            user-select: none;
+          }
         }
         span.loginForgot {
           text-align: center;

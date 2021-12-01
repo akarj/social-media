@@ -42,12 +42,8 @@ export default function Login() {
               required
               ref={password}
             />
-            <button className="loginButton">
-              {isFetching ? (
-                <CircularProgress sx={{ color: "white" }} />
-              ) : (
-                "Log In"
-              )}
+            <button className="loginButton" disabled={isFetching}>
+              {isFetching ? <CircularProgress color="white" /> : "Log In"}
             </button>
             <span className="loginForgot">Forgot Password?</span>
             <button className="loginRegisterButton">
