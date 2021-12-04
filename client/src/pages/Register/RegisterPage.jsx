@@ -1,14 +1,14 @@
 import { useRef } from "react";
 import "./RegisterPage.scss";
 import axios from "axios";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router";
 
 export default function RegisterPage() {
   const username = useRef();
   const email = useRef();
   const password = useRef();
   const passwordAgain = useRef();
-  const history = useHistory();
+  const navigate = useNavigate();
   const handleClick = async e => {
     e.preventDefault();
     if (passwordAgain.current.value === password.current.value) {
@@ -21,7 +21,7 @@ export default function RegisterPage() {
       };
       try {
         await axios.post("/auth/register", user);
-        history.push("/login");
+        navigate("/login");
       } catch (error) {
         console.log(error);
         // res.status(402).sent("p");

@@ -5,8 +5,11 @@ import { SiMessenger } from "react-icons/si";
 import { IoMdNotifications } from "react-icons/io";
 import Avatar from "@mui/material/Avatar";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function Topbar() {
+  const { user } = useContext(AuthContext);
   return (
     <div className="topbarContainer">
       <div className="topbarLeft">
@@ -86,10 +89,12 @@ export default function Topbar() {
           src="https://source.unsplash.com/32x32/weekly?person"
           alt="profile"
         /> */}
-        <Avatar
-          alt="Random Profile"
-          src="https://source.unsplash.com/32x32/weekly?person"
-        />
+        <Link to={`/profile/${user.username}`}>
+          <Avatar
+            alt="Random Profile"
+            src="https://source.unsplash.com/32x32/weekly?person"
+          />
+        </Link>
       </div>
     </div>
   );
