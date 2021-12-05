@@ -85,10 +85,7 @@ export default function Topbar() {
             <i className="topbarIconBadge">1</i>
           </div>
         </div>
-        {/* <img
-          src="https://source.unsplash.com/32x32/weekly?person"
-          alt="profile"
-        /> */}
+
         <Link to={`/profile/${user.username}`}>
           <Avatar
             alt="Random Profile"
