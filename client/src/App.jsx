@@ -27,7 +27,7 @@ export default function App() {
           element={user ? <Navigate to="/" /> : <RegisterPage />}
         />
         {/* 
-        Profile page issue */}
+        Profile page issue still */}
         <Route path="profile/:username" element={<ProfilePage />} />
       </Routes>
     </Router>
